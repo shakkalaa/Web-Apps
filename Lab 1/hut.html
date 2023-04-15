@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title> Adventure Game </title>
+        <link rel="icon" href="html-adventure-story-master/assets/dragon-logo.png" />
+    </head>
+    <body>
+        <h1>Witch's hut</h1> <hr>
+        <a id='door' href='#'>
+        <img id='doorImage' onclick='openDoor()' src='html-adventure-story-master/assets/locked-door.gif' width="240">
+        </a>
+        <p id='textbox'></p>
+        <div> <a id='exit' href='swamp.html'>Exit</a> </div>
+        <hr>
+        <iframe src='inventory.html' id=inventory height=100 width=125></iframe>
+        <script>
+        inventory.src += location.search;
+        exit.href += location.search;
+
+        var queryString = new URLSearchParams(location.search);
+        var key = +queryString.get("keys");
+
+        function openDoor(){
+            if (doorImage.src.includes('Open-Door')){
+                door.href = 'hut-inside.html?'+queryString;
+            }
+            else if (key > 0){
+                doorImage.src='html-adventure-story-master/assets/Open-Door.gif'
+                textbox.innerHTML = `The door unlocked. but the key broke apart.`
+                queryString.set('keys',--key);
+                inventory.src = 'inventory.html?'+queryString;
+                exit.href = 'swamp.html?'+queryString;
+            }
+            else {
+                textbox.innerHTML = `The door is locked`;
+            }
+        }
+        </script>
+    </body>
+</html>

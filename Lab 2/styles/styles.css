@@ -1,0 +1,198 @@
+/*This is the CSS for Lab 2: CSS Crash Course */
+/* Goal 1: CSS Selectors */
+body{
+    background-color: lightgray;
+}
+.class-selector{
+    text-align: right;
+}
+#id-selector{
+    text-align: center;
+}
+
+/* Goal 2: CSS Colors */
+/*background colors*/
+.bg-white{
+    background-color: rgb(255, 255, 255);
+}
+.bg-green{
+    background-color: rgb(0, 255, 0);
+}
+.bg-red{
+    background-color: rgb(255, 0, 0);
+}
+.bg-blue{
+    background-color: rgb(0, 0, 255);
+}
+.bg-yellow{
+    background-color: rgb(255, 255, 0);
+}
+.bg-dark{
+    background-color: rgb(0, 0, 0);
+}
+
+/*font colors*/
+.text-red{
+    color: red;
+}
+.text-blue{
+    color: blue;
+}
+.text-green{
+    color: green;
+}
+.text-white{
+    color: white;
+}
+
+/* Goal 3: CSS Fonts */
+/*font properties*/
+.bold{
+    font-weight: bold;
+}
+.italic{
+    font-styles: italic;
+}
+.large-text{
+    font-size: 22px;
+}
+.small-text{
+    font-size: small;
+}
+
+/*font familes*/
+.arial-font{
+    font-family: 'Arial';
+}
+.bangers-font{
+    font-family: 'Bangers';
+}
+
+/* Goal 4: CSS Spacing */
+.outline{
+    outline-width: 3px;
+    outline-style: dashed;
+    outline-color: red;
+}
+.border{
+    border-width: 3px;
+    border-style: solid;
+    border-color: blue;
+}
+.padding{
+    padding: 20px;
+}
+.margin{
+    margin: 20px;
+}
+.container{
+    width: 90%;
+    margin: auto;
+}
+
+/* Goal 5: CSS Sizing */
+.force-full-viewport{
+    width:100%;
+    height:100%;
+}
+.shrink-to-viewport{
+    max-width:100%;
+    max-height:100%;
+}
+
+/* Goal 6: CSS Backgrounds */
+.background-image{
+    background-image: url('../assets/bg-image.jpg');
+}
+.background-image-without-repeat{
+    background-image: url('../assets/bg-image.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+}   
+.background-image-fixed{
+    background-image: url('../assets/bg-image.jpg');
+    background-attachment: fixed;
+}
+.background-gradient{
+    background-image: linear-gradient(red, yellow);
+}
+
+/* Goal 7: CSS Customizations (to Default HTML Styles) */
+a {
+    text-decoration: none;
+}
+a:hover{
+    color:red;
+}
+button:hover {
+    background-color: red;
+}
+ul {
+    list-style-image: url('../assets/list-item-image.png');
+    list-style-position: inside;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+th, td {
+    text-align: center;
+    padding: 5px;
+}
+tr:nth-child(even){
+    background-color: white;
+}
+tr:nth-child(odd){
+    background-color: silver;
+}
+th {
+    background-color: green;
+    color: white;
+}
+
+/* Goal 8: CSS Aligning with Flexbox */
+/*Goal 8: CSS Aligning with Flexbox*/
+.center{
+    display: flex;
+    justify-content: center;
+}
+.left {
+    display: flex;
+    justify-content: flex-start;
+}
+.right{
+    display: flex;
+    justify-content: flex-end;
+}
+.justify-space-between {
+    display: flex;
+    justify-content: space-between;
+}
+.justify-space-around{
+    display: flex;
+    justify-content: space-around;
+}
+.justify-space-evenly{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* Goal 9: CSS Aligning with Gridview */
+.grid-1col{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+}
+.grid-2col{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+}
+.grid-3col{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    justify-items: center;
+}

@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title> Adventure Game </title>
+        <link rel="icon" href="html-adventure-story-master/assets/dragon-logo.png" />
+    </head>
+    <body>
+        <h1>Witch's Hut</h1>
+        <hr>
+        <img src='html-adventure-story-master/assets/witchhut-inside.png' width="480" />
+        <p> You step into the hut and see a magical tome on the desk. You walk toward the book and look at it. </p>
+        <video autoplay muted loop width=480>
+            <source src="html-adventure-story-master/assets/Runic-Video.mp4">
+        </video>
+        <p> It's opened to a magical spell, and the glyphs glow in sequence. What could it mean? </p>
+        <div> <a id='exit' href='hut.html'>Exit</a> </div>
+        <hr>
+        <iframe src='inventory.html' id=inventory height=100 width=125></iframe>
+        <script>
+            inventory.src += location.search;
+            exit.href += location.search;
+        </script>
+    </body>
+</html>

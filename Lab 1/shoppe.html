@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title> Adventure Game </title>
+        <link rel="icon" href="html-adventure-story-master/assets/dragon-logo.png" />
+    </head>
+    <body>
+        <h1>Shop</h1>
+        <hr>
+        <img src="html-adventure-story-master/assets/shop.gif" width="480">
+        <h4> What can I get you?</h4>
+        <div>
+            <button onclick='food()'> Health &#128156; <br> <i> 1 gp </i></button>
+            <button onclick='weapon()'> Attack &#128481; <br> <i> 5 gp</i></button>
+            <button onclick="key()"> Key &#128273; <br> <i> 10 gp</i></button>
+        </div>
+        <div> <a id='exit' href="overworld.html"> Exit</a></div>
+        <hr>
+        <iframe src="inventory.html" id=inventory height=100 width=125></iframe>
+        <script>
+            //concat search param to hrefs
+            inventory.src += location.search;
+            exit.href += location.search;
+
+            //Use URLSerachParams class to get the values
+            var queryString = new URLSearchParams(location.search);
+            var gp = +queryString.get("gp");
+            var hp = +queryString.get("hp");
+            var ap = +queryString.get("ap");
+            var keys = +queryString.get("keys");
+
+            function food(){
+                if (gp > 0 ){
+                    queryString.set('gp', gp-1);
+                    queryString.set('hp', hp+1);
+                    location.search = queryString;
+                }
+            }
+
+            function weapon(){
+                if (gp >= 5 ){
+                    queryString.set('gp', gp-5);
+                    queryString.set('ap', ap+1);
+                    location.search = queryString;
+                }
+            }
+
+            function key(){;
+                if (gp >= 10 ){
+                    queryString.set('gp', gp-10);
+                    queryString.set('keys',keys+1);
+                    location.search = queryString;
+
+                }
+            }
+        </script>
+    </body>
+</html>

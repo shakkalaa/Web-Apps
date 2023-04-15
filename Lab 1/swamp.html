@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title> Adventure Game</title>
+        <link rel="icon" href="html-adventure-story-master/assets/dragon-logo.png"/>
+    </head>
+    <body>
+        <h1>Swamp</h1>
+        <hr>
+        <img src='html-adventure-story-master/assets/swamp-hut.jpg' width="480">
+        <p>You come across a creepy witch hut in the swamp.</p>
+        <h4>What do you want to do?</h4>
+        <ul>
+            <li> <a id='hut' href="hut.html">Go into the hut </a></li>
+            <li> <a href="#" onclick='die()'> Search outside hut </a></li>
+        </ul>
+        <p> <a id='exit' href="overworld.html"> Exit</a></p>
+        <hr>
+        <iframe src="inventory.html" id=inventory height=100 width=125></iframe>
+        <script>
+            inventory.src += location.search; //append queryString to iframe URL
+            exit.href += location.search; //append queryString to exit href
+            hut.href += location.search; //append queryString to hut href
+
+            //function to overwrite the HTML document's body with new HTML elements
+            function die(){
+                document.body.innerHTML = (
+                `<h1>You Die</h1>
+                <img src="html-adventure-story-master/assets/gator.jpg" width="480">
+                <p> A giant alligator eats you. </p>
+                <a href="index.html"> <h4> Game Over </h4> </a>
+                <audio autoplay>
+                    <source src="assets/scream.mp3">
+                </audio>`
+                );
+            }
+
+        </script>
+    </body>
+</html>

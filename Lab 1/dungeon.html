@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Adventure Game</title>
+        <link rel="icon" href="html-adventure-story-master/assets/dragon-logo.png">        
+    </head>
+    <body>
+        <h1>Dungeon Entrance</h1> <hr>
+        <p> There is a magic seal preventing you from entering the dungeon. You must dispel. </p>
+        <img src='html-adventure-story-master/assets/magic-seal.gif' width="480">
+        <p> There's a codex for transliterating runic spells into english. Be careful, incorrect incantations are dangerous!</p>
+        <img src='html-adventure-story-master/assets/rune-translation.png' width="480">
+        <div>
+            <label>Enter the magic word:</label>
+            <input type="text" id='inputText'>
+            <input type="button" value='Submit' onClick="magicWord()">
+        </div>
+        <hr>
+        <div> <a id='exit' href='overworld.html'>Exit</a> </div>
+        <hr>
+        <iframe src='inventory.html' id=inventory height=100 width=125></iframe>
+        <script>
+            inventory.src += location.search;
+            exit.href += location.search;
+
+            function magicWord(){
+
+                if (inputText.value == 'open'){
+                    parent.location='dragon.html'+location.search;
+                }
+                else {
+                    document.body.innerHTML = (
+                    `<h1>You Die</h1>
+                    <img src="html-adventure-story-master/assets/death-spell.gif" width="480">
+                    <p>You misspoke the magic word and your soul is ripped from your body</p>
+                    <a href="index.html"> <h4>Game Over</h4> </a>
+                    <audio autoplay>
+                        <source src="html-adventure-story-master/assets/scream.mp3">
+                        </audio>`
+                    );
+                }
+            }
+        </script>
+    </body>
+</html>
