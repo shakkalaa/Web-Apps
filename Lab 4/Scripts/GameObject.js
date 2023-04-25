@@ -18,6 +18,33 @@ class GameObject {
     draw() {
         view.picture(this.#image, this.#x, this.#y, this.#width, this.#height);
     }
+
+    getX() {
+        return this.#x;
+    }
+    
+    getY() {
+        return this.#y;
+    }
+
+    move(x, y) {
+        this.#x = x;
+        this.#y = y;
+    }
+
+    getWidth() {
+        return this.#width;
+    }
+    
+    getHeight() {
+        return this.#height;
+    }
+        
+    setImage(img){
+        this.#image = img;
+    }
+          
+        
     
 }
     

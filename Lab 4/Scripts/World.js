@@ -11,4 +11,9 @@ class World{
         return this.#levels[level];
     }
 
+    getLength(){
+        return this.#levels.length;
+    }
+        
+
 }
