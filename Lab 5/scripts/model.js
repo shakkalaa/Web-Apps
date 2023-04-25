@@ -27,16 +27,19 @@ function giveClue(guess){
 
 function main(){
     const now = Date.now();
-    
     if (gameover){
         return;
-    }else if (timeLeft <= 0){
+    }
+    else if (timeLeft <= 0){
         printGameOver('LOSE');
-    }else if (now - then > 1000){
+    }
+    else if (now - then > 1000){
         timeLeft--;
         printDigits();
         printAttemptsRemaining();
         then = Date.now();
     }
+        
     requestAnimationFrame(main);
 }
+main();
