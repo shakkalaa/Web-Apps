@@ -41,5 +41,19 @@ const createGame = () => { //CREATE function
     playGame(); //call PLAY function
 }
 
+window.checkAnswer = (attempt) => { //CHECK_ANSWER function
+    const answer = state.trivia.correct_answer; //Dereference answer
+    if (attempt == answer){ //When Attempt is correct
+        state.score += state.timer; //Add to Score based on time
+        state.timer += 10; //Add 10 bonus seconds
+        playGame(); //Play Next Round of Trivia
+    }
+    else { //When Attempt is incorrect
+        clearInterval( state.intervalId ); //stop countdown interval
+        view.GameoverScene(state); //show gameover view
+    }
+}
+    
+
 window.addEventListener('load', start); //When window loads execute start
     
