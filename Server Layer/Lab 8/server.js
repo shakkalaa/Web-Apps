@@ -70,7 +70,7 @@ function serveIndex( response ){
 } 
 
 function serveError ( response ){
-    response . writeHead ( 500 , { 'Content-type' : 'text/plain' });
-    response . write ( '500 Internal Error \n ' );
-    response . end ();
+    response.writeHead( 500 , { 'Content-type' : 'text/plain' });
+    response.write( '500 Internal Error \n ' );
+    response.end();
 }
