@@ -1,2 +1,2 @@
-const bar = { name:'bar', type:'spam', age:0 };
+const bar = { name:"bar", type:" spam", age:0 };
 export default bar;
