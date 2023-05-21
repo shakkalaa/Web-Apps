@@ -24,4 +24,4 @@ const Options = (trivia) => { //Function for HTML component
         case "multiple": return MultiOptions(trivia); //Return multiple choice type
     }
 }
-    export default Options; //Export the Options function
+export default Options; //Export the Options function

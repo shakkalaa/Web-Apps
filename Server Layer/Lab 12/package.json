@@ -1,0 +1,15 @@
+{
+    "name" : "user-login-app" ,
+    "version" : "1.0.0" ,
+    "description" : "This project implements user authentication using passport" ,
+    "main" : "app.js" ,
+    "scripts" :{
+        "start" : "npm install && node app"
+    },
+    "author" : "me" ,
+    "dependencies" : {
+        "express" : "*",
+        "ejs" : "*" 
+
+    }
+} 

@@ -1,0 +1,16 @@
+{
+    "name": "number-guesser-api",
+    "version": "1.0.0",
+    "description": "Backend API for Number Guessing Game",
+    "author": "Shakayla Mosely",
+    "main": "app.js",
+    "scripts": {
+        "start": "npm install && node app"
+    },
+    "dependencies": {
+        "express": "*",
+        "shortid" : "*" 
+
+    }
+}
+    

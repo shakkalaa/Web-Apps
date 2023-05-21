@@ -1,10 +1,14 @@
 const express = require ( 'express' );
 const app = express();
-const port = 3000 ;
+const port = process.env.PORT || 3000 ; 
 const bodyParser = require( 'body-parser' ); 
+const submissions = []; 
+const path = require( 'path' ); 
+
 
 app.get( '/' , serveIndex );
 app.get ( '/contact.html' , serveContact ); 
+app.get ( '/submissions' , serveSubmissions ); 
 
 app.post( '/contact/send' , contactHandler ); 
 
@@ -22,7 +26,11 @@ function serveContact( request , response ){
     response.sendFile( 'contact.html' , { root: __dirname });
 } 
 
+function serveSubmissions( request , response ){
+    response.json ( submissions );
+} 
+
 function contactHandler( request , response ){
-    console.log( 'Received POST Request' );
+    submissions . push ( request . body ); 
     response.redirect( '/' );
 }
