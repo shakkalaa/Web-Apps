@@ -1,0 +1,12 @@
+{
+    "name": "socket-chat-app",
+    "version": "0.0.1",
+    "description": "real-time chat app with socket.io",
+    "scripts": {
+    "start": "node app.js"
+    },
+    "dependencies": {
+         "express": "*"
+    }
+}
+    

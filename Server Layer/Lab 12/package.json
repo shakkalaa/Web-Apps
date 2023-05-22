@@ -9,7 +9,14 @@
     "author" : "me" ,
     "dependencies" : {
         "express" : "*",
-        "ejs" : "*" 
+        "ejs" : "*",
+        "shortid" : "*",
+        "express-session" : "*", 
+        "passport" : "*" ,
+        "passport-local" : "*",
+        "express-flash" : "*", 
+        "bcrypt" : "*" ,
+        "dotenv" : "*" 
 
     }
 } 
