@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tic Tac Toe</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      margin-top: 40px;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    code {
+      display: block;
+      background-color: #f5f5f5;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input[type="text"] {
+      width: 300px;
+      padding: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+
+    #moveResult {
+      margin-top: 20px;
+      white-space: pre;
+    }
+  </style>
+</head>
+<body>
+  <h1>Tic Tac Toe Game API Documentation</h1>
+  
+  <h2>Overview</h2>
+  <p>
+    This API allows you to interact with a Tic Tac Toe game. It provides endpoints to create a new game, get game state, make moves, get game history, and end the game.
+  </p>
+  
+  <h2>Endpoints</h2>
+  
+  <h3>Create a new game</h3>
+  <p>
+    <strong>Endpoint:</strong> POST /api/game<br>
+    <strong>Description:</strong> Creates a new Tic Tac Toe game.<br>
+    <strong>HTTP Method:</strong> POST<br>
+    <strong>Request body:</strong> None<br>
+    <strong>Response:</strong> JSON response with the game ID and initial game state.
+  </p>
+  <pre><code>
+    Example:
+    POST /api/game
+    Response:
+    {
+      "id": "f1a8a7b2-3a24-4b27-b95e-92c0c7c7e90d",
+      "state": {
+        "board": [
+          ["", "", ""],
+          ["", "", ""],
+          ["", "", ""]
+        ],
+        "winner": null
+      },
+      "history": []
+    }
+  </code></pre>
+  
+  <!-- Repeat the above section for other endpoints -->
+  
+  <h2>Demo</h2>
+  <div>
+    <h3>Make a move</h3>
+    <label for="gameIdInput">Game ID:</label>
+    <input type="text" id="gameIdInput"><br>
+    <label for="playerInput">Player:</label>
+    <input type="text" id="playerInput"><br>
+    <label for="moveInput">Move:</label>
+    <input type="text" id="moveInput"><br>
+    <button onclick="makeMove()">Make Move</button>
+    <div id="moveResult"></div>
+  </div>
+  
+  <script>
+    // Add your JavaScript code here to handle API requests and display results
+    function makeMove() {
+      const gameId = document.getElementById('gameIdInput').value;
+      const player = document.getElementById('playerInput').value;
+      const move = JSON.parse(document.getElementById('moveInput').value);
+
+      fetch(`/api/game/${gameId}/move`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ player, move })
+      })
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('moveResult').textContent = JSON.stringify(data, null, 2);
+        })
+        .catch(error => {
+          console.error(error);
+          document.getElementById('moveResult').textContent = 'Error occurred during the API request.';
+        });
+    }
+  </script>
+</body>
+</html>

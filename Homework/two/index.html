@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Shapes to Make</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="myCanvas" width="500" height="500"></canvas>
+  <button onclick="drawSquare()">Draw Square</button>
+  <button onclick="drawCircle()">Draw Circle</button>
+  <button onclick="drawTriangle()">Draw Triangle</button>
+  <button onclick="drawLine()">Draw Line</button>
+  <form id="rectangleForm">
+    <label for="width">Width:</label>
+    <input type="number" id="width" name="width">
+    <label for="height">Height:</label>
+    <input type="number" id="height" name="height">
+    <button type="submit">Draw Rectangle</button>
+  </form>
+
+
+  <script>
+    // Get the canvas element
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    // Function to draw a square on the canvas
+    function drawSquare() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "red";
+      ctx.fillRect(50, 50, 100, 100);
+    }
+
+    // Function to draw a circle on the canvas
+    function drawCircle() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.beginPath();
+      ctx.arc(200, 200, 50, 0, 2 * Math.PI);
+      ctx.fillStyle = "blue";
+      ctx.fill();
+    }
+
+    // Function to draw a triangle on the canvas
+    function drawTriangle() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.beginPath();
+      ctx.moveTo(250, 50);
+      ctx.lineTo(350, 150);
+      ctx.lineTo(150, 150);
+      ctx.closePath();
+      ctx.fillStyle = "green";
+      ctx.fill();
+    }
+
+    // Function to draw a line on the canvas
+    function drawLine() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.beginPath();
+      ctx.moveTo(50, 250);
+      ctx.lineTo(450, 250);
+      ctx.strokeStyle = "orange";
+      ctx.lineWidth = 5;
+      ctx.stroke();
+    }
+
+     // Function to draw a rectangle on the canvas
+     function drawRectangle(width, height) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "purple";
+      ctx.fillRect(100, 300, width, height);
+    }
+
+    // Event listener for the rectangle form submission
+    var rectangleForm = document.getElementById("rectangleForm");
+    rectangleForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+      var widthInput = document.getElementById("width");
+      var heightInput = document.getElementById("height");
+      var width = parseInt(widthInput.value);
+      var height = parseInt(heightInput.value);
+      drawRectangle(width, height);
+    });
+
+    // Function to draw a rectangle on the canvas
+    function drawRectangle(width, height) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "purple";
+      ctx.fillRect(100, 300, width, height);
+    }
+
+    // Event listener for the rectangle form submission
+    var rectangleForm = document.getElementById("rectangleForm");
+    rectangleForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+      var widthInput = document.getElementById("width");
+      var heightInput = document.getElementById("height");
+      var width = parseInt(widthInput.value);
+      var height = parseInt(heightInput.value);
+      drawRectangle(width, height);
+    });
+  </script>
+</body>
+</html>
